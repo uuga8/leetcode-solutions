@@ -27,3 +27,14 @@ class Solution(object):
                 
             return helper(s, index + 1)
         helper(s, 0)
+
+        
+        
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        def helper(lo, hi):
+            if lo < hi:
+                s[lo], s[hi] = s[hi], s[lo]
+                helper(lo + 1, hi - 1)
+        
+        helper(0, len(s) - 1)
