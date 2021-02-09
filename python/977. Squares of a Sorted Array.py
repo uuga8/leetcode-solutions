@@ -36,3 +36,27 @@ class Solution(object):
                 for index in range(-1, -len(nums) -1, -1):
                     result.append(nums[index]**2)
         return result
+
+    
+    
+class Solution(object):
+    def sortedSquares(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+
+        left = 0
+        right = len(nums) -1
+        new_list = [None]*len(nums)
+        
+        for index in range(-1, -len(nums)-1, -1):
+            if abs(nums[left]) >= abs(nums[right]):
+                new_list[index] = nums[left]**2
+                left += 1
+            else:
+                new_list[index] = nums[right]**2
+                right -= 1
+        return new_list
+        
+        
