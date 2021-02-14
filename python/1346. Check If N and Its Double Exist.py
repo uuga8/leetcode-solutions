@@ -10,3 +10,21 @@ class Solution:
                 
                                     
         return self.checkIfExist(arr[1:])
+
+    
+    
+class Solution:
+    def checkIfExist(self, arr: List[int]) -> bool:
+        
+        seen = {}
+                
+        for index in range(0, len(arr)):
+            
+            double = arr[index] * 2
+            half = arr[index] / 2
+            
+            if double in seen or half in seen:
+                return True
+            else:
+                seen[arr[index]] = 1
+        return False
