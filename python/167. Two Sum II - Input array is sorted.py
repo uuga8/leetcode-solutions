@@ -12,7 +12,22 @@ class Solution:
                 index += 1
             else:
                 return [seen[first_half] + 1, index + 1]
-            
+ 
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+           
+        right = len(numbers) - 1
+        left = 0
+        
+        while left < right:
+            sum = numbers[left] + numbers[right]
+            if sum == target:
+                return [left + 1, right + 1]
+            elif sum < target:
+                left += 1
+            else:
+                right -= 1
+                
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
            
@@ -27,3 +42,4 @@ class Solution:
                 right -= 1
             else:
                 return [left + 1, right + 1]
+
