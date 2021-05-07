@@ -14,7 +14,7 @@ class Solution {
         elementIndex += 1;
         
         while (resultIndex < resultLength) {
-            if (listIndex < 0 || elementIndex == n) {
+            if (listIndex < 0 || elementIndex == n) { // you're at the top or end of row
                 if (listIndex < 0 && elementIndex < n) {
                     listIndex += 1;
                 }
@@ -28,7 +28,7 @@ class Solution {
                 elementIndex -= 1;
                 listIndex += 1;
                 
-                while (listIndex < m && elementIndex >= 0) {
+                while (listIndex < m && elementIndex >= 0) { // going down
                     result[resultIndex] = mat[listIndex][elementIndex];
                     resultIndex += 1;
                     elementIndex -= 1;
@@ -37,7 +37,7 @@ class Solution {
                 
             }
             
-            else {
+            else { // you're at the bottom or beginning of row
                 if (listIndex == m) {
                     listIndex -= 1;
                     elementIndex += 2;
@@ -50,7 +50,7 @@ class Solution {
                 elementIndex += 1;
                 listIndex -= 1;
                 
-                while (listIndex >= 0 && elementIndex < n) {
+                while (listIndex >= 0 && elementIndex < n) { // going up
                     result[resultIndex] = mat[listIndex][elementIndex];
                     resultIndex += 1;
                     elementIndex += 1;
